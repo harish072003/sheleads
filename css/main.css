@@ -151,9 +151,8 @@ h6 {
 .header .logo h1 {
   font-size: 28px;
   margin: 0;
-  font-family: 'Poppins'
   font-weight: 700;
-  color: var(--heading-color);
+  color: red;
   text-transform: uppercase;
 }
 

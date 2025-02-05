@@ -152,7 +152,7 @@ h6 {
   font-size: 28px;
   margin: 0;
   font-weight: 700;
-  color: red;
+  color: var(--default-color);
   text-transform: uppercase;
 }
 

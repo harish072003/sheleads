@@ -1579,68 +1579,46 @@ section,
 /*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
-.service-details .services-list {
+.services .service-item {
   background-color: var(--surface-color);
-  padding: 10px 30px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  margin-bottom: 20px;
-}
-
-.service-details .services-list a {
-  display: block;
-  line-height: 1;
-  padding: 8px 0 8px 15px;
-  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  margin: 20px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  padding: 30px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
   transition: 0.3s;
-}
-
-.service-details .services-list a.active {
-  color: var(--heading-color);
-  font-weight: 700;
-  border-color: var(--accent-color);
-}
-
-.service-details .services-list a:hover {
-  border-color: var(--accent-color);
-}
-
-.service-details .services-img {
-  margin-bottom: 20px;
-}
-
-.service-details h3 {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.service-details h4 {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.service-details p {
-  font-size: 15px;
-}
-
-.service-details ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.service-details ul li {
-  padding: 5px 0;
   display: flex;
   align-items: center;
 }
 
-.service-details ul i {
+.services .service-item .service-img {
+  width: 50px; /* Adjust the size of the image */
+  height: 50px; /* Keep aspect ratio */
+  margin-right: 20px; /* Space between image and text */
+  object-fit: contain; /* Ensures the image fits well */
+}
+
+.services .service-item .title {
+  font-weight: 700;
+  margin-bottom: 15px;
   font-size: 20px;
-  margin-right: 8px;
+}
+
+.services .service-item .title a {
+  color: var(--heading-color);
+}
+
+.services .service-item .description {
+  line-height: 24px;
+  font-size: 14px;
+  margin: 0;
+}
+
+.services .service-item:hover {
+  border-color: var(--accent-color);
+}
+
+.services .service-item:hover .title a {
   color: var(--accent-color);
 }
+
 
 /*--------------------------------------------------------------
 # Portfolio Details Section

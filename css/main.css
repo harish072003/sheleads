@@ -1158,38 +1158,31 @@ section,
 --------------------------------------------------------------*/
 .about-2 .about-img {
   position: relative;
-  margin: 60px 0 0 60px;
+  margin: 60px 0 0 40px; /* Reduced left margin */
 }
 
 .about-2 .about-img::before {
   content: "";
   position: absolute;
   top: -60px;
-  left: -60px;
+  left: -40px; /* Adjusted for alignment */
   right: 0;
   bottom: 0;
   background-repeat: no-repeat;
   z-index: 1;
 }
 
-.about-2 .about-img img {
-  position: relative;
-  z-index: 2;
-  display: block; /* Ensures no unwanted spacing below images */
-  max-width: 100%; /* Ensures responsiveness */
-  height: auto;
-}
-
 @media (max-width: 575px) {
   .about-2 .about-img {
-    margin: 30px 0 0 30px;
+    margin: 30px 0 0 20px; /* Adjusted for smaller screens */
   }
 
   .about-2 .about-img::before {
     top: -30px;
-    left: -30px;
+    left: -20px; /* Adjusted for smaller screens */
   }
 }
+
 
 .about-2 h3 {
   font-weight: 300;

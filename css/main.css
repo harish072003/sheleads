@@ -1179,7 +1179,7 @@ section,
 
   .about-2 .about-img::before {
     top: -30px;
-    left: -20px; /* Adjusted for smaller screens */
+    left: -10px; /* Adjusted for smaller screens */
   }
 }
 

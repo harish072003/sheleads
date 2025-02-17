@@ -1589,8 +1589,8 @@ section,
 }
 
 .services .service-item .service-img {
-  width: 80px; /* Adjust the size of the image */
-  height: 60px; /* Keep aspect ratio */
+  width: 100px; /* Adjust the size of the image */
+  height: 70px; /* Keep aspect ratio */
   margin-right: 20px; /* Space between image and text */
   object-fit: contain; /* Ensures the image fits well */
 }

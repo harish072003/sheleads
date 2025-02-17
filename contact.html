@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Contact - She Leads</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="img/favicon.ico" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="css/main.css" rel="stylesheet">
+  <style>
+    .feedback-message {
+      margin-top: 20px;
+      text-align: center;
+    }
+  
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+  
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body class="contact-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="img/logo.png" alt="She Leads Logo">
+        <h1 class="sitename">She Leads</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li class="dropdown">
+            <a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="about.html">She Leads</a></li>
+            </ul>
+          </li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Contact</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Contact</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+          <iframe 
+            style="border:0; width:100%; height:270px;" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.678950229969!2d80.1216951!3d12.9203814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525f0045372d81%3A0x2ca6c14c1ad81141!2sMCC%20MRF%20Innovation%20Park!5e0!3m2!1sen!2sin!4v1708173600000!5m2!1sen!2sin" 
+            frameborder="0" 
+            allowfullscreen 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>MCC MRF Innovation Park</p>
+                <p>W4CC+697, Professors Colony, East Tambaram, Tambaram</p>
+                <p>Chennai, Tamil Nadu 600059</p>
+              </div>
+            </div>
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+91 8825644099</p>
+              </div>
+            </div>
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>info@example.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <form id="contactForm" action="https://script.google.com/macros/s/your-script-id/exec" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">She Leads</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>MCC MRF Innovation Park</p>
+            <p>W4CC+697, Professors Colony, East Tambaram, Tambaram</p>
+            <p> Chennai, Tamil Nadu 600059</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+91 8825644099</span></p>
+            <p><strong>Email:</strong> <a href="mailto:iswaryasheleads1@gmail.com">iswaryasheleads1@gmail.com</a></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Mementos & Miniatures</a></li>
+            <li><a href="#">3D Designs</a></li>
+            <li><a href="#">Laser Designs</a></li>
+            <li><a href="#">Custom Creations</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Get in Touch</h4>
+          <p>For inquiries, collaborations, or custom orders, feel free to contact us at CEO of SheLeads Iswarya R ,and follow us on social media to stay updated on our latest designs and innovations.
+ </p>
+          <p class="mt-3"><strong>Phone:</strong> <span>+91 8825644099</span></p>
+          <p><strong>Email:</strong> <a href="mailto:iswaryared1@gmail.com">iswaryared1@gmail.com</a></p>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">She Leads</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="">Harish</a> Distributed by <a href=>She Leads
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+  <div id="feedbackMessage" class="feedback-message"></div>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();  // Prevent form from submitting normally
+  
+      var form = document.getElementById("contactForm");
+      var feedbackMessage = document.getElementById("feedbackMessage");
+      var formData = new FormData(form);
+  
+      fetch(form.action, {
+        method: "POST",
+        body: formData
+      })
+      .then(response => response.json())  // Handle the response from Google Apps Script
+      .then(data => {
+        if (data.result === "success") {
+          feedbackMessage.innerHTML = "<p class='success'>Your message has been sent successfully!</p>";
+        } else {
+          feedbackMessage.innerHTML = "<p class='error'>There was an error submitting the form. Please try again later.</p>";
+        }
+      })
+      .catch(error => {
+        feedbackMessage.innerHTML = "<p class='error'>There was an error submitting the form. Please try again later.</p>";
+        console.error('Error:', error);
+      });
+    }
+  </script>
+  <!-- JavaScript Files -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/aos/aos.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1158,28 +1158,43 @@ section,
 --------------------------------------------------------------*/
 .about-2 .about-img {
   position: relative;
-  margin: 60px 0 0 40px; /* Reduced left margin */
+  margin: 60px 0 0 40px; /* Reduced left margin for better alignment */
 }
 
 .about-2 .about-img::before {
   content: "";
   position: absolute;
   top: -60px;
-  left: -40px; /* Adjusted for alignment */
+  left: -40px; /* Adjusted background positioning */
   right: 0;
   bottom: 0;
   background-repeat: no-repeat;
   z-index: 1;
 }
 
+.about-2 .about-img img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 @media (max-width: 575px) {
   .about-2 .about-img {
-    margin: 30px 0 0 20px; /* Adjusted for smaller screens */
+    margin: 30px auto 0 0; /* Aligns image to the left instead of center */
+    display: flex;
+    justify-content: flex-start; /* Ensures alignment to the left */
   }
 
   .about-2 .about-img::before {
     top: -30px;
-    left: -10px; /* Adjusted for smaller screens */
+    left: -20px; /* Adjusted background position for mobile */
+  }
+
+  .about-2 .about-img img {
+    width: auto; /* Prevents forced scaling */
+    max-width: 90%; /* Ensures image doesn't take full width */
   }
 }
 

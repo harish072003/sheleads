@@ -1157,7 +1157,7 @@ section,
 # About 2 Section
 --------------------------------------------------------------*/
 .about-2 .about-img {
-  position: relative;
+  position: left;
   margin: 60px 0 0 60px;
 }
 

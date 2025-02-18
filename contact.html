@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Poppins:wght@100;300;400;500;700&family=Raleway:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,20 +26,122 @@
 
   <!-- Main CSS File -->
   <link href="css/main.css" rel="stylesheet">
+  <style>
+    .feedback-message {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Custom SweetAlert2 Popup Styling */
+    .swal2-popup.custom-popup {
+      border-radius: 15px; /* Rounded corners */
+      box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5); /* Red glow */
+      font-family: Arial, sans-serif;
+    }
+  </style>
+
+  <!-- Include SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script>
+    function showSuccessPopup() {
+      Swal.fire({
+        icon: 'success',
+        title: 'Thank You!',
+        text: 'Your message has been successfully submitted. Our CEO will contact you soon!',
+        confirmButtonColor: '#D50000', /* Red Button */
+        confirmButtonText: 'OK',
+        background: '#fff', /* White Background */
+        color: '#D50000', /* Red Text */
+        iconColor: '#00C853', /* Green Tick Color */
+        customClass: {
+          popup: 'custom-popup'
+        }
+      });
+    }
+
+    function submitForm(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const form = document.getElementById('contactForm');
+      const formData = new FormData(form);
+
+      // Show a loading message while submission is in progress
+      Swal.fire({
+        title: 'Submitting...',
+        text: 'Please wait while we process your request.',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        background: '#fff', /* White Background */
+        color: '#D50000', /* Red Text */
+        didOpen: () => {
+          Swal.showLoading();
+        }
+      });
+
+      fetch('https://script.google.com/macros/s/AKfycbx2aQ2kzUTSMNXqU0vxlouTSjxcMCJkCmIcLfoTrewfG6qAroH2shUZ-GHmrypwKCcw/exec', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(data => {
+          setTimeout(() => { // Simulated delay of 2 seconds
+            if (data.result === 'success') {
+              showSuccessPopup(); // Call success popup function
+              form.reset(); // Reset the form
+            } else {
+              // Show error message
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops... ❌',
+                text: 'There was an error: ' + data.error,
+                confirmButtonColor: '#D50000',
+                confirmButtonText: 'Try Again',
+                background: '#fff', /* White Background */
+                color: '#D50000' /* Red Text */
+              });
+            }
+          }, 2000); // 2-second delay
+        })
+        .catch(error => {
+          setTimeout(() => {
+            console.error('Error:', error);
+            // Show unexpected error message
+            Swal.fire({
+              icon: 'error',
+              title: 'Error ❗',
+              text: 'An unexpected error occurred. Please try again later.',
+              confirmButtonColor: '#D50000',
+              confirmButtonText: 'OK',
+              background: '#fff', /* White Background */
+              color: '#D50000' /* Red Text */
+            });
+          }, 2000); // 2-second delay
+        });
+    }
+  </script>
 </head>
 
 <body class="contact-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-         <img src="img/lo.jpeg" alt=""> 
+        <img src="img/lo.jpeg" alt=""> 
         <h1 class="sitename">She Leads</h1>
       </a>
 
-       <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li class="dropdown"><a href="about.html"><span>About</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -52,8 +154,6 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-
     </div>
   </header>
 
@@ -86,19 +186,17 @@
     loading="lazy" 
     referrerpolicy="no-referrer-when-downgrade">
 </iframe>
-
         </div><!-- End Google Maps -->
 
         <div class="row gy-4">
-
           <div class="col-lg-4">
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>Address</h3>
                 <p>MCC MRF Innovation Park</p>
-                 <p>W4CC+697, Professors Colony, East Tambaram, Tambaram</p>
-            <p> Chennai, Tamil Nadu 600059</p>
+                <p>W4CC+697, Professors Colony, East Tambaram, Tambaram</p>
+                <p>Chennai, Tamil Nadu 600059</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -106,7 +204,7 @@
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Call Us</h3>
-                <p>+91 8825644099</p>
+                <p>+91 1234567890</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -114,51 +212,43 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
-                <p>iswaryasheleads1@gmail.com</p>
+                <p>info.sheleads@domain.com</p>
               </div>
             </div><!-- End Info Item -->
 
-          </div>
+          </div><!-- End Left Column -->
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+            <div class="contact-form">
+              <form id="contactForm" onsubmit="submitForm(event)">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="name">Full Name</label>
+                    <input type="text" name="name" id="name" class="form-control" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                  </div>
+                  <div class="col-md-12">
+                    <label for="message">Your Message</label>
+                    <textarea name="message" id="message" class="form-control" rows="6" required></textarea>
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
                 </div>
+              </form>
+              <div class="feedback-message"></div><!-- Error or success message -->
+            </div><!-- End Contact Form -->
+          </div><!-- End Right Column -->
 
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
+        </div><!-- End Row -->
+      </div><!-- End Container -->
 
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
+    </section><!-- End Contact Section -->
 
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
+  </main><!-- End Main -->
 
    <footer id="footer" class="footer dark-background">
 
